@@ -1,10 +1,15 @@
 No_of_DataDisk=$1
+echo "No. of data disk is: " ${No_of_DataDisk} >> mountdatadisk.log
 
 counter=0
 arr=(sdc sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn sdo sdp sdq sdr sds sdt sdu sdv sdw sdx sdy sdz)
 
+echo "Counter : " $counter >> mountdatadisk.log
+
 
 while [ $counter -lt ${No_of_DataDisk} ]; do
+
+echo "Disk Partition : " ${arr[$counter]} >> mountdatadisk.log
 sudo fdisk /dev/${arr[$counter]} <<EOF
 p
 n
@@ -29,4 +34,5 @@ echo "/dev/${arr[$counter]}1     /mnt/data$counter    ext4   defaults,nofail   0
 mount -a
 
 counter=`expr $counter + 1`
+echo "Counter : " $counter >> mountdatadisk.log
 done

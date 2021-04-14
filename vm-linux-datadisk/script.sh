@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 No_of_DataDisk=$1
 echo "No. of data disk is: " ${No_of_DataDisk} >> mountdatadisk.log

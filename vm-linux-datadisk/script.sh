@@ -2,13 +2,15 @@ No_of_DataDisk=$1
 echo "No. of data disk is: " ${No_of_DataDisk} >> mountdatadisk.log
 
 counter=0
+echo "Counter : " $counter >> mountdatadisk.log
+
 arr=(sdc sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn sdo sdp sdq sdr sds sdt sdu sdv sdw sdx sdy sdz)
+echo "Array : " ${arr[*]} >> mountdatadisk.log
 
 echo "Counter : " $counter >> mountdatadisk.log
 
 
 while [ $counter -lt ${No_of_DataDisk} ]; do
-
 echo "Disk Partition : " ${arr[$counter]} >> mountdatadisk.log
 sudo fdisk /dev/${arr[$counter]} <<EOF
 p

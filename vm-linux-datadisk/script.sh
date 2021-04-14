@@ -1,4 +1,4 @@
-sudo fdisk /dev/sdb <<EOF
+sudo fdisk /dev/sdc <<EOF
 p
 n
 p
@@ -8,7 +8,7 @@ p
 w
 EOF
 
-mkfs.ext4 /dev/sdb1 <<EOF
+mkfs.ext4 /dev/sdc1 <<EOF
 y
 EOF
 
@@ -16,7 +16,7 @@ EOF
 mkdir -p /mnt/data
 
 #log "Adding partitions to fstab to mount on reboot"
-echo "/dev/sdb1     /mnt/data    ext4   defaults,nofail   0 2" >> /etc/fstab
+echo "/dev/sdc1     /mnt/data    ext4   defaults,nofail   0 2" >> /etc/fstab
 
 #log "Mounting newly created partition using fstab file"
 mount -a

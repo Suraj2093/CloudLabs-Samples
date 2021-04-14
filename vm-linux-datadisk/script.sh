@@ -1,10 +1,12 @@
+#!/bin/sh
+
 No_of_DataDisk=$1
 echo "No. of data disk is: " ${No_of_DataDisk} >> mountdatadisk.log
 
 counter=0
 echo "Counter : " $counter >> mountdatadisk.log
 
-declare -a arr
+
 arr=(sdc sdd sde sdf sdg sdh sdi sdj sdk sdl sdm sdn sdo sdp sdq sdr sds sdt sdu sdv sdw sdx sdy sdz)
 echo "Array : " ${arr[*]} >> mountdatadisk.log
 

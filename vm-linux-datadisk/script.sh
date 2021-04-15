@@ -37,6 +37,7 @@ echo "/dev/${arr[$counter]}1     /mnt/data$counter    ext4   defaults,nofail   0
 
 #log "Mounting newly created partition using fstab file"
 mount -a
+sleep 10
 
 counter=`expr $counter + 1`
 echo "Counter : " $counter >> mountdatadisk.log

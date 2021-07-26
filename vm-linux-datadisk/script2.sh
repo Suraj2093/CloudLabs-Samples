@@ -54,3 +54,8 @@ datadiskcount=`expr $datadiskcount + 1`
 done
 
 rm disk.txt
+
+> stderr
+> stdout
+
+rm script2.sh
